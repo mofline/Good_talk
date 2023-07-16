@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="C:\Users\dento\Desktop\GOOD TALKで遊ぼう\css\all.css">
+  <script src="C:\Users\dento\Desktop\GOOD TALKで遊ぼう\js\all.js"></script>
+  <title>GOOD TALKで遊ぼう</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <div class="sfs">
+  <div id="sf1">adb shell am force-stop パッケージ名<br>
+    adb shell am start -n パッケージ名/アクティビティ名
+  </div>
+  <div id="sf2">
+    adb shell am force-stop com.teslacoilsw.launcher<br>
+    adb shell am start -n com.teslacoilsw.launcher/.NovaLauncher
+  </div>
+  </div>
+  <header>
+    <a href="#" id="head" class="FUCKER">
+      <img src="C:\Users\dento\Desktop\GOOD TALKで遊ぼう\GOODTALK_header.png" alt="header" width="1000" height="250">
+    </a>
+  </header>
+  <div class="open">
+  <h2 style="margin: 0;">・adbで指定されたアプリを開く</h2>
+  <p style="margin: 0;">novaとかを最初に開く時に使う</p>
+  　 <p style="margin: 0;">パッケージ名、アクティビティ名は後述のコマンドで調べる</p>
+  <div class="cop">
+  <h1 class="l1" id="s1">adb shell am start -n パッケージ名/アクティビティ名</h1>
+  <button id="copy" onclick="copy_1()">コピー</button>
+</div>
+</div>
+  <hr>
+<div id="tranceFuck">
+  <h2>・憎き翻訳機アプリのホーム画面変化を抑える。（強制）</h2>
+  <h3>&emsp;無効化</h3>
+  <p>一旦無効化してnovaを「常時」にしたあとに有効化すれば翻訳機を開かない限りはずっとnova固定される(なおふとした瞬間に勝手に起動する模様)</p>
+  <p>まぁほぼ翻訳機として使おうとなんて思う人いないだろうし戻す必要はそこまでないだろう</p>
+  <div class="cop">
+  <h1 class="l1"  id="s2">adb shell pm disable-user link.zhidou.translator</h1>
+  <button id="copy" onclick="copy_2()">コピー</button>
+  </div>
+  <h3> &emsp;L・有効化</h3>
+  <div class="cop">
+    <h1 class="l1"  id="s3">adb shell pm enable link.zhidou.translator</h1>
+    <button id="copy" onclick="copy_3()">コピー</button>
+  </div>
+  </div>
+
+  <hr>
+  <div id="density">
+    <h2>・最小幅を変更する</h2>
+    <p>あまりに数値が大きすぎるとちょっとあれだからやめようね</p>
+    <div class="cop">
+    <h1 class="l1"  id="s4" style="margin: 0;">adb shell wm density 最小幅</h1>
+    <button id="copy" onclick="copy_4()">コピー</button>
+  </div>
+    <h3> &emsp;L・最小幅を調べる</h3>
+    <p>左側が最小幅</p>
+    <div class="cop">
+    <h1 class="l1"  id="s5">adb shell wm size</h1>
+    <button id="copy" onclick="copy_5()">コピー</button>
+    </div>
+    <h3> &emsp;L・リセット</h3>
+    <div class="cop">
+    <h1 class="l1"  id="s6">adb shell wm density reset</h1>
+    <button id="copy" onclick="copy_6()">コピー</button>
+    </div>
+  </div>
+  <hr>
+  <div id="defoultLauncher">
+    <h2 style="margin: 0;">・デフォルトのランチャーアプリを変更する</h2>
+    　　　<p style="margin: 0;">タスクは殺してから設定する</p>
+    <h1 class="l1"  id="s7" style="margin: 0;">adb shell am force-stop パッケージ名</h1>
+    <div class="cope">
+    <h1 class="l1"  id="s8" style="margin: 0;">adb shell am start -n パッケージ名/アクティビティ名</h1>
+    <button id="copa" onclick="copy_7()">コピー</button>
+    </div>
+    <h3 style="margin: 0;">&emsp; L・手っ取り早くnovaのやつ</h3>
+    <h1 class="l1"  id="s9" style="margin: 0;">adb shell am force-stop com.teslacoilsw.launcher</h1>
+    <div class="cope">
+    <h1 class="l1"  id="s10" style="margin: 0;">adb shell am start -n com.teslacoilsw.launcher/.NovaLauncher</h1>
+    <button id="copa" onclick="copy_9()">コピー</button>
+   </div>
+  </div>
+
+  <hr>
+  <div id="packages">
+    <h2>・パッケージ名を調べる</h2>
+    <p>入っているアプリのパッケージ名の一覧が出てくる</p>
+    <p>それっぽいのを探そう</p>
+    <p>わかんなかったらとりあえず起動してこう</p>
+    <h1 class="l1"  id="s11">adb shell pm list packages</h1>
+    <h3> &emsp;L・サードパーティ製のみ</h3>
+    <h1 class="l1"  id="s12">adb shell pm list packages -3</h1>
+    <h3> &emsp;L・システムアプリのみ</h3>
+    <h1 class="l1"  id="s13">adb shell pm list packages -s</h1>
+    <h3> &emsp;L・無効にしたアプリのみ</h3>
+    <h1 class="l1"  id="s14">adb shell pm list packages -d</h1>
+    <h3> &emsp;L・無効にしていないアプリのみ</h3>
+    <h1 class="l1"  id="s15">adb shell pm list packages -e</h1>
+  </div>
+  <hr>
+  <div id="actibity">
+    <h2>・アクティビティ名を調べる</h2>
+    <p>いっぱい出てくるが「android.intent.action.MAIN:」と書かれたところを探す</p>
+    <p>そこのパッケージ名のあとに書いてあるのがアクティビティ名として使える</p>
+    <h1 class="l1"  id="s16">adb shell pm dump パッケージ名</h1>
+  </div>
+  <hr>
+  <div id="install">
+    <h2>・アプリをインストールさせる</h2>
+    <p>「adb install 」って打ってエクスプローラから直接ドラッグアンドドロップするだけ</p>
+    <h1 class="l1"  id="s17">adb install apkのファイルパス</h1>
+  </div>
+  <hr>
+  <div id="statusbar">
+    <h2>・通知バーを下ろす</h2>
+    <p>こいつなぜかスワイプでステータスバーを降ろせない</p>
+    <p>そんなときに役立つのがこのコマンド</p>
+    <p>強制的にステータスバーを降ろさせる(スワイプでできるようになるとは言ってない)</p>
+    <h1 class="l1"  id="s18">adb shell service call statusbar 1</h1>
+  </div>
+  <hr>
+  <div id="android_details">
+    <h2>・androidの詳細情報</h2>
+    <p>androidのバージョンとかわからないときに使う</p>
+    <h3> &emsp;L・androidバージョン確認</h3>
+    <h1 class="l1"  id="s19">adb shell getprop ro.build.version.release</h1>
+    <h3> &emsp;L・ビルド番号確認</h3>
+    <h1 class="l1"  id="s20">adb shell getprop ro.build.version.incremental</h1>
+    <h3> &emsp;L・コードネーム確認</h3>
+    <h1 class="l1"  id="s21">adb shell getprop ro.build.version.codename</h1>
+    <h3> &emsp;L・SDKバージョン確認</h3>
+    <h1 class="l1"  id="s22">adb shell getprop ro.build.version.sdk</h1>
+    <h3> &emsp;L・ビルドID確認</h3>
+    <h1 class="l1"  id="s23">adb shell getprop ro.build.id</h1>
+    <h3> &emsp;L・センサー確認</h3>
+    <h1 class="l1"  id="s24">adb shell dumpsys sensorservice</h1>
+  </div>
+  <footer>
+    <p id="copylight"><small>2023　MOF</small></p>
+  </footer>
+</body>
+</html>
