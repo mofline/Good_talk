@@ -54,3 +54,8 @@ button#copa{
 .sfs{
    display: none;
 }
+
+div#acs {
+   margin: -20px 0px 0px 0px;
+   display: flex;
+}
