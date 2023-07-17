@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
 .l1 {
+   position: static;
    color: rgb(255, 255, 255);
    background-color: black;
    width: 75%;
-   height: fit-content;
+   height: auto;
  } 
 
 #glass {
@@ -12,20 +13,20 @@
   border: black double;
 }
 
-.FUCKER {
-  display: flex;
-  justify-content: center;
+#header {
+  position: fixed;
+  top: 0px;
 }
 
-#copylight{
+#copylight {
    text-align: center;
 }
 
-.cop{
+.cop {
    display: flex;
 }
 
-#copy{
+#copy {
    color: rgb(0, 10, 19);
    background-color: rgb(3, 255, 116);
    border-radius: 10px;
@@ -36,7 +37,7 @@
    font-family:sans-serif;
 }
 
-button#copa{
+button#copa {
    color: rgb(0, 10, 19);
    background-color: rgb(3, 255, 116);
    border-radius: 10px;
@@ -47,11 +48,11 @@ button#copa{
    font-family:sans-serif;
 }
 
-.cope{
+.cope {
    display: flex;
 }
 
-.sfs{
+.sfs {
    display: none;
 }
 
@@ -59,3 +60,32 @@ div#acs {
    margin: -20px 0px 0px 0px;
    display: flex;
 }
+main {
+   margin-top: 200px;
+}
+
+button#up {
+   position: fixed;
+   margin-top: 33%;
+   margin-left: 95%;
+   background-color: rgb(0, 255, 13);
+   width: 80px;
+   height: 80px;
+   border-radius: 100%;
+   z-index: 2;
+}
+
+#yazi {
+   position: fixed;
+   margin-top: 33.6%;
+   margin-left: 96%;
+   z-index: 3;
+}
+
+#up:hover {
+   background-color: rgb(255, 0, 0);
+}
+
+html{
+   scroll-behavior: smooth;
+ }
